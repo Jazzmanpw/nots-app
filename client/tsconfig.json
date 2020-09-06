@@ -1,0 +1,16 @@
+{
+  "include": ["src", "types"],
+  "exclude": ["node_modules"],
+  "extends": "@snowpack/app-scripts-react/tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "isolatedModules": true,
+    "paths": {
+      "*": ["web_modules/.types/*"],
+      "Components/*": ["src/components/*"],
+      "State/*": ["src/state/*"]
+    },
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  }
+}
