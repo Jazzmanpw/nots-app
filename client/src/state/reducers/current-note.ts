@@ -1,18 +1,12 @@
 import { combineReducers } from 'redux';
+import { createReducer } from 'deox';
 
-import { NOTE_CHANGED } from 'State/action-types';
-import { createReducerMap } from './common';
+import { noteChanged } from 'State/actions/current-note';
 
-import type { NoteChanged } from 'State/actions/current-note';
+export default combineReducers({
+  index: createReducer(-1 as number, handle => []),
+  value: createReducer('' as string, handle => [
+    handle(noteChanged, (_, { payload }) => payload),
+  ])
+})
 
-const initStates = {
-  index: -1,
-  value: '',
-}
-
-export default combineReducers(createReducerMap({
-  index: {},
-  value: {
-    [NOTE_CHANGED]: (_state, { value }: NoteChanged) => value,
-  },
-}, initStates));

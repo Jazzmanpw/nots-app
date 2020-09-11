@@ -1,13 +1,8 @@
-import { NOTE_CHANGED, NOTE_SAVED } from 'State/action-types';
+import { createAction } from 'deox';
 
-export type NoteSaved = ReturnType<typeof noteSaved>
-export function noteSaved() {
-  return { type: NOTE_SAVED };
-}
+export const noteSaved = createAction(
+  'NOTE_SAVED',
+  resolve => (value: string, index: number) => resolve({ value, index }),
+);
 
-export type NoteChanged = ReturnType<typeof noteChanged>
-export function noteChanged(value: string) {
-  return { type: NOTE_CHANGED, value };
-}
-
-export type CurrentNoteAction = NoteChanged | NoteSaved
+export const noteChanged = createAction('NOTE_CHANGED', resolve => (value: string) => resolve(value));

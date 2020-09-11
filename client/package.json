@@ -7,24 +7,27 @@
     "dev": "yarn snowpack dev"
   },
   "dependencies": {
+    "deox": "^3.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "rxjs": ">=6.0.0-beta.0 <7",
+    "tslib": "^1.9.0"
   },
   "devDependencies": {
+    "@snowpack/app-scripts-react": "^1.10.0",
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.3",
     "@types/jest": "^26.0.10",
     "@types/react": "^16.9.48",
     "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",
+    "@types/snowpack-env": "^2.3.0",
     "jest": "^26.4.2",
+    "prettier": "^2.0.5",
     "snowpack": "^2.9.3",
     "ts-jest": "^26.3.0",
-    "typescript": "^4.0.2",
-    "@snowpack/app-scripts-react": "^1.10.0",
-    "@testing-library/jest-dom": "^5.5.0",
-    "@testing-library/react": "^10.0.3",
-    "@types/snowpack-env": "^2.3.0",
-    "prettier": "^2.0.5"
+    "typescript": "^4.0.2"
   }
 }

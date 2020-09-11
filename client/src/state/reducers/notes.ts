@@ -1,5 +1,5 @@
-import { createReducer } from './common';
+import { createReducer } from 'deox';
 
-import type { AnyAction } from 'redux';
+import type { Reducer } from 'redux';
 
-export default createReducer<string[], AnyAction>({}, []);
+export default createReducer([] as string[],handle => []) as Reducer<string[]>;
