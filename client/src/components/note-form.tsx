@@ -11,7 +11,7 @@ export default function NoteForm() {
 
   const onSave: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
-    dispatch(noteSaved());
+    dispatch(noteSaved.start());
   };
 
   const onChange: ChangeEventHandler<HTMLTextAreaElement> = ({ target: { value } }) => {

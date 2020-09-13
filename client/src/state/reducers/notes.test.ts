@@ -1,5 +1,5 @@
 import { noteSaved } from 'State/actions/current-note';
-import { initAction } from 'State/actions/test-actions';
+import { initAction } from 'Utils/tests';
 import importedReducer from './notes';
 
 import type { AnyAction } from 'redux';
@@ -13,16 +13,22 @@ test('initial state to be an empty array', () => {
   expect(reducer()).toEqual([]);
 });
 
-describe(`${noteSaved}`, () => {
+describe(noteSaved.end, () => {
   const initState = ['the first note', 'the second note'];
 
-  test('if a note with a new index added, append it to the state', () => {
+  test('if a note passed with a new index, append it', () => {
     const value = 'the third note';
     const index = 2;
-    const result = reducer(initState, noteSaved(value, index));
+    const result = reducer(initState, noteSaved.end(value, index));
+
+    expect(result).toEqual([...initState, value]);
   });
 
-  test('if a note with an existing index added, replace the previous note', () => {
-    //
+  test('if a note passed with an existing index, replace the note with the new one', () => {
+    const value = 'the new first note';
+    const index = 0;
+    const result = reducer(initState, noteSaved.end(value, index));
+
+    expect(result).toEqual([value, initState[1]]);
   });
 });

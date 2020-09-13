@@ -1,5 +1,5 @@
-import { noteChanged } from 'State/actions/current-note';
-import { initAction } from 'State/actions/test-actions';
+import { noteChanged, noteSaved } from 'State/actions/current-note';
+import { initAction } from 'Utils/tests';
 import importedReducer from './current-note';
 
 import type { AnyAction } from 'redux';
@@ -13,6 +13,11 @@ describe('index', () => {
   test('initial state to be -1', () => {
     expect(reducer().index).toBe(-1);
   });
+
+  test(noteSaved.end.type, () => {
+    const index = 3;
+    expect(reducer(undefined, noteSaved.end('any value', index)).index).toBe(index);
+  });
 });
 
 describe('value', () => {
@@ -20,7 +25,7 @@ describe('value', () => {
     expect(reducer().value).toBe('');
   });
 
-  test(`${noteChanged}`, () => {
+  test(noteChanged.type, () => {
     const value = 'some value'
     expect(reducer(undefined, noteChanged(value)).value).toBe(value);
   });

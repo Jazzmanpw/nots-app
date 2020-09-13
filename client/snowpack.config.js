@@ -3,6 +3,7 @@ module.exports = {
   alias: {
     'Components': './src/components',
     'State': './src/state',
+    'Utils': './stc/utils',
   },
   devOptions: {
     open: 'none',

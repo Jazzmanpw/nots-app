@@ -8,7 +8,8 @@
     "paths": {
       "*": ["web_modules/.types/*"],
       "Components/*": ["src/components/*"],
-      "State/*": ["src/state/*"]
+      "State/*": ["src/state/*"],
+      "Utils/*": ["src/utils/*"]
     },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true
