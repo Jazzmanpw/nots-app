@@ -1,3 +1,4 @@
+import NoteList from 'Components/note-list';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -8,6 +9,7 @@ import { NoteForm } from 'Components/index';
 ReactDOM.render(
   <Provider store={store}>
     <NoteForm />
+    <NoteList />
   </Provider>,
   window.document.getElementById('root'),
 );

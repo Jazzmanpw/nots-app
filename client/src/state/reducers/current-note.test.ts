@@ -1,4 +1,4 @@
-import { noteChanged, noteSaved } from 'State/actions/current-note';
+import { noteChanged, noteSelected } from 'State/actions/current-note';
 import { initAction } from 'Utils/tests';
 import importedReducer from './current-note';
 
@@ -14,9 +14,9 @@ describe('index', () => {
     expect(reducer().index).toBe(-1);
   });
 
-  test(noteSaved.end.type, () => {
-    const index = 3;
-    expect(reducer(undefined, noteSaved.end('any value', index)).index).toBe(index);
+  test(noteSelected.type, () => {
+    const index = 2;
+    expect(reducer(undefined, noteSelected('any value', index)).index).toBe(index);
   });
 });
 
@@ -28,5 +28,10 @@ describe('value', () => {
   test(noteChanged.type, () => {
     const value = 'some value'
     expect(reducer(undefined, noteChanged(value)).value).toBe(value);
+  });
+
+  test(noteSelected.type, () => {
+    const value = 'selected value';
+    expect(reducer(undefined, noteSelected(value, 4)).value).toBe(value);
   });
 });

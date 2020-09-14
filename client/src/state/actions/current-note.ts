@@ -9,3 +9,8 @@ export const noteSaved = {
 }
 
 export const noteChanged = createAction('NOTE_CHANGED', resolve => (value: string) => resolve(value));
+
+export const noteSelected = createAction(
+  'NOTE_SELECTED',
+  resolve => (value: string, index: number) => resolve({ value, index }),
+)
