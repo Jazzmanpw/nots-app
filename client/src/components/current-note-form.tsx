@@ -6,7 +6,7 @@ import { currentNoteValueSelector } from 'State/selectors/current-note';
 
 import type { ChangeEventHandler, FormEventHandler } from 'react';
 
-export default function NoteForm() {
+export default function CurrentNoteForm() {
   const dispatch = useDispatch();
   const textInputRef = useRef<HTMLTextAreaElement>(null);
 
@@ -22,7 +22,7 @@ export default function NoteForm() {
   };
 
   return (
-    <form onSubmit={onSave} className='note-form'>
+    <form onSubmit={onSave} className='current-note-form'>
       <textarea ref={textInputRef} onChange={onChange} value={value} />
       <button>Save the note</button>
     </form>

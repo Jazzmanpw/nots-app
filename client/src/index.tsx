@@ -1,15 +1,14 @@
-import NoteList from 'Components/note-list';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import store from 'State/store';
-import { NoteForm } from 'Components/index';
+import { CurrentNoteForm, NoteListForm } from 'Components/index';
 
 ReactDOM.render(
   <Provider store={store}>
-    <NoteForm />
-    <NoteList />
+    <CurrentNoteForm key='current' />
+    <NoteListForm key='list' />
   </Provider>,
   window.document.getElementById('root'),
 );
