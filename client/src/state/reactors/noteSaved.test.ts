@@ -41,16 +41,16 @@ function mockNotesCount(count: number) {
   return count;
 }
 
-describe(noteSaved.start, () => {
+describe(noteSaved.started, () => {
   beforeEach(() => {
-    reactor({ state, dispatch, action: noteSaved.start });
+    reactor({ state, dispatch, action: noteSaved.started });
   });
 
   describe('index is non-negative', () => {
     const { index, value } = mockNote(5, 'some new note');
 
     test('dispatch noteSaved.end with current index & value from state as payload', () => {
-      expect(dispatch).toBeCalledWith(noteSaved.end(value, index));
+      expect(dispatch).toBeCalledWith(noteSaved.done(value, index));
     });
   });
 
@@ -59,7 +59,7 @@ describe(noteSaved.start, () => {
     const count = mockNotesCount(4);
 
     test('dispatch noteSaved.end with current value and index as an index of an added note', () => {
-      expect(dispatch).toBeCalledWith(noteSaved.end(value, count));
+      expect(dispatch).toBeCalledWith(noteSaved.done(value, count));
     });
   });
 });

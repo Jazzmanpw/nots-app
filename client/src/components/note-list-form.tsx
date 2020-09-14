@@ -1,7 +1,7 @@
 import React, { ChangeEventHandler } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { noteSelected } from 'State/actions/current-note';
+import { noteDeleted, noteSelected } from 'State/actions/notes';
 import { currentNoteIndexSelector } from 'State/selectors/current-note';
 import { notesSelector } from 'State/selectors/notes';
 
@@ -12,16 +12,20 @@ export default function NoteListForm() {
 
   const onChange: ChangeEventHandler<HTMLSelectElement> = e => {
     const index = +e.target.value;
-    dispatch(noteSelected(notes[index] || '', index));
+    dispatch(noteSelected(notes[index], index));
   }
+  const addNote = () => dispatch(noteSelected('', notes.length));
+  const deleteNote = () => dispatch(noteDeleted(currentNoteIndex));
 
   // TODO: generate a unique key for every note
   return (
     <form className='note-list-form'>
-      <select size={10} onChange={onChange} value={currentNoteIndex} className='note-list'>
+      <select size={10} onChange={onChange} value={currentNoteIndex} className='note-list' key='list'>
+        {notes.length && currentNoteIndex === -1 ? <option value={-1} disabled>Select a note</option> : null}
         {notes.map((value, i) => <option value={i}>{value.substr(0, 30)}</option>)}
-        <option value={notes.length}>New note</option>
       </select>
+      <button type='button' onClick={addNote} key='add'>Add</button>
+      <button type='button' onClick={deleteNote} key='delete'>Delete</button>
     </form>
   );
 }

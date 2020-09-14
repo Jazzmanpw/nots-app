@@ -1,4 +1,5 @@
-import { noteChanged, noteSelected } from 'State/actions/current-note';
+import { noteChanged } from 'State/actions/current-note';
+import { noteSelected } from 'State/actions/notes';
 import { initAction } from 'Utils/tests';
 import importedReducer from './current-note';
 
@@ -10,8 +11,8 @@ const reducer = (
 ) => importedReducer(state, action);
 
 describe('index', () => {
-  test('initial state to be 0', () => {
-    expect(reducer().index).toBe(0);
+  test('initial state to be -1', () => {
+    expect(reducer().index).toBe(-1);
   });
 
   test(noteSelected.type, () => {

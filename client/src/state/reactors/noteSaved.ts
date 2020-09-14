@@ -5,9 +5,9 @@ import { notesCountSelector } from 'State/selectors/notes';
 import type { ReactorArg } from 'State/middlewares/reactor';
 
 export default function ({ state, dispatch, action }: ReactorArg): void {
-  if (action.type === noteSaved.start.type) {
+  if (action.type === noteSaved.started.type) {
     const index = currentNoteIndexSelector(state);
     const newIndex = index < 0 ? notesCountSelector(state) : index;
-    dispatch(noteSaved.end(currentNoteValueSelector(state), newIndex));
+    dispatch(noteSaved.done(currentNoteValueSelector(state), newIndex));
   }
 }
