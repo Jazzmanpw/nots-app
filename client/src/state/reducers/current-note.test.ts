@@ -10,8 +10,8 @@ const reducer = (
 ) => importedReducer(state, action);
 
 describe('index', () => {
-  test('initial state to be -1', () => {
-    expect(reducer().index).toBe(-1);
+  test('initial state to be 0', () => {
+    expect(reducer().index).toBe(0);
   });
 
   test(noteSelected.type, () => {

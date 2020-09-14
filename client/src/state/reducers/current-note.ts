@@ -4,7 +4,7 @@ import { createReducer } from 'deox';
 import { noteChanged, noteSelected } from 'State/actions/current-note';
 
 export default combineReducers({
-  index: createReducer(-1 as number, handle => [
+  index: createReducer(0 as number, handle => [
     handle(noteSelected, (_, { payload: { index } }) => index),
   ]),
   value: createReducer('' as string, handle => [
