@@ -16,7 +16,7 @@ export default function NoteList() {
   }
 
   return (
-    <select size={10} onChange={onChange} value={currentNoteIndex}>
+    <select size={10} onChange={onChange} value={currentNoteIndex} className='note-list'>
       <option value={-1}>Add or select a note</option>
       {notes.map((value, i) => <option value={i}>{value.substr(0, 30)}</option>)}
       <option value={notes.length}>New note</option>

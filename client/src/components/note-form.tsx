@@ -23,8 +23,8 @@ export default function NoteForm() {
   };
 
   return (
-    <form onSubmit={onSave}>
-      <textarea ref={textInputRef} onChange={onChange} disabled={disabled} value={value}/>
+    <form onSubmit={onSave} className='note-form'>
+      <textarea ref={textInputRef} onChange={onChange} disabled={disabled} value={value} />
       <button disabled={disabled}>Save the note</button>
     </form>
   )
