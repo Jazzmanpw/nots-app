@@ -7,6 +7,7 @@
     "dev": "yarn snowpack dev"
   },
   "dependencies": {
+    "axios": "^0.20.0",
     "deox": "^3.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

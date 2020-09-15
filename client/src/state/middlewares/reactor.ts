@@ -13,4 +13,4 @@ export interface ReactorArg {
   action: AnyAction,
 }
 
-export type Reactor = (arg: ReactorArg) => void
+export type Reactor = (arg: ReactorArg) => unknown
