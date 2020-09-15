@@ -11,6 +11,10 @@
     "importsNotUsedAsValues": "error",
     "isolatedModules": true,
     "sourceMap": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "./",
+    "paths": {
+      "Storage/*": ["storage/*"]
+    }
   }
 }
