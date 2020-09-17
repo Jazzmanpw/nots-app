@@ -1,3 +1,4 @@
+import { uploadNotes } from 'State/actions/apiCall';
 import { noteSaved } from 'State/actions/current-note';
 import { currentNoteIndexSelector, currentNoteValueSelector } from 'State/selectors/current-note';
 import { notesCountSelector } from 'State/selectors/notes';
@@ -46,12 +47,20 @@ describe(noteSaved.started, () => {
     reactor({ state, dispatch, action: noteSaved.started });
   });
 
+  function testDispatchUploadNotes() {
+    test('dispatch uploadNotes.started', () => {
+      expect(dispatch).toBeCalledWith(uploadNotes.started());
+    });
+  }
+
   describe('index is non-negative', () => {
     const { index, value } = mockNote(5, 'some new note');
 
     test('dispatch noteSaved.end with current index & value from state as payload', () => {
       expect(dispatch).toBeCalledWith(noteSaved.done(value, index));
     });
+
+    testDispatchUploadNotes();
   });
 
   describe('index is -1', () => {
@@ -61,5 +70,7 @@ describe(noteSaved.started, () => {
     test('dispatch noteSaved.end with current value and index as an index of an added note', () => {
       expect(dispatch).toBeCalledWith(noteSaved.done(value, count));
     });
+
+    testDispatchUploadNotes();
   });
 });
