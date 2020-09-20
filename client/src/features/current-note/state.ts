@@ -1,20 +1,10 @@
-import { createAction } from 'deox';
-import { combineReducers } from 'redux';
 import { createReducer } from 'deox';
+import { combineReducers } from 'redux';
 
-import { noteDeleted, noteSelected } from 'Features/notes';
+import { noteDeleted, noteSelected } from 'Features/notes/actions';
+import { noteChanged } from './actions';
 
 import type { ReduxState } from 'State/store';
-
-export const noteSaved = {
-  started: createAction('NOTE_SAVED:STARTED'),
-  done: createAction(
-    'NOTE_SAVED:DONE',
-    resolve => (value: string, index: number) => resolve({ value, index }),
-  ),
-}
-
-export const noteChanged = createAction('NOTE_CHANGED', resolve => (value: string) => resolve(value));
 
 export default combineReducers({
   index: createReducer(-1 as number, handle => [
@@ -35,4 +25,3 @@ export const currentNoteValueSelector = (state: ReduxState) => currentNoteSelect
 export const currentNoteIndexSelector = (state: ReduxState) => currentNoteSelector(state).index;
 
 export const noteSelectedSelector = (state: ReduxState) => currentNoteIndexSelector(state) >= 0;
-

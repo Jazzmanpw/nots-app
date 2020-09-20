@@ -1,13 +1,13 @@
+import { noteDeleted, noteSelected } from 'Features/notes/actions';
+import { initAction, testAction } from 'Utils/tests';
+import { noteSaved, noteChanged } from './actions';
 import reducer, {
-  noteSaved,
-  noteChanged,
   currentNoteIndexSelector,
   currentNoteValueSelector,
   noteSelectedSelector,
-} from 'Features/current-note';
-import { noteDeleted, noteSelected } from 'Features/notes';
+} from './state';
+
 import type { ReduxState } from 'State/store';
-import { initAction, testAction } from 'Utils/tests';
 
 describe('actions', () => {
   const value = 'some value';

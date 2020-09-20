@@ -1,6 +1,6 @@
-import { notesSelector } from 'Features/notes';
-import api from 'Utils/api';
+import { notesSelector } from 'Features/notes/state';
 import { downloadNotes, uploadNotes } from 'State/actions/apiCall';
+import api from 'Utils/api';
 
 import type { ReactorArg } from 'State/middlewares/reactor';
 

@@ -1,8 +1,6 @@
-import { noteSaved } from 'Features/current-note';
-import reducer, {
-  noteSelected,
-  noteDeleted,
-} from 'Features/notes';
+import { noteSaved } from 'Features/current-note/actions';
+import { noteSelected, noteDeleted } from 'Features/notes/actions'
+import reducer from 'Features/notes/state';
 import { initAction, testAction } from 'Utils/tests';
 
 describe('actions', () => {

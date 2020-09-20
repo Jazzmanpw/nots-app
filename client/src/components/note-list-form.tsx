@@ -1,8 +1,9 @@
 import React, { ChangeEventHandler } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { currentNoteIndexSelector } from 'Features/current-note';
-import { noteDeleted, noteSelected, notesSelector } from 'Features/notes';
+import { currentNoteIndexSelector } from 'Features/current-note/state';
+import { noteDeleted, noteSelected } from 'Features/notes/actions';
+import { notesSelector } from 'Features/notes/state';
 
 export default function NoteListForm() {
   const dispatch = useDispatch();

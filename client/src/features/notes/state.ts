@@ -1,5 +1,5 @@
 import { createReducer } from 'deox';
-import { noteSaved } from 'Features/current-note';
+import { noteSaved } from 'Features/current-note/actions';
 import { noteDeleted, noteSelected } from './actions';
 
 import type { ReduxState } from 'State/store';
