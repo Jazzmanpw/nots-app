@@ -8,6 +8,7 @@
     "paths": {
       "*": ["web_modules/.types/*"],
       "Components/*": ["src/components/*"],
+      "Features/*": ["src/features/*"],
       "State/*": ["src/state/*"],
       "Utils/*": ["src/utils/*"]
     },

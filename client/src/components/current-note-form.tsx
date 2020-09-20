@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { noteChanged, noteSaved } from 'State/actions/current-note';
-import { currentNoteValueSelector, noteSelectedSelector } from 'State/selectors/current-note';
+import { currentNoteValueSelector, noteChanged, noteSaved, noteSelectedSelector } from 'Features/current-note';
 import { noNotesSavedSelector } from 'State/selectors/notes';
 
 import type { ChangeEventHandler, FormEventHandler } from 'react';

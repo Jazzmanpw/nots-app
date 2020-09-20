@@ -1,6 +1,6 @@
 import { createAction } from 'deox';
 
-import type { Dispatch } from 'redux';
+import type { AnyAction, Dispatch } from 'redux';
 import type { ReduxState } from 'State/store';
 
 export function mockDispatch(): jest.MockedFunction<Dispatch> {
@@ -16,3 +16,9 @@ export function mockState(): ReduxState {
 }
 
 export const initAction = createAction('__init');
+
+export function testAction<P, M>(action: AnyAction, payload?: P, meta?: M): void {
+  test(action.type, () => {
+    expect(action).toEqual({ type: expect.any(String), payload, meta });
+  })
+}

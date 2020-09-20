@@ -1,4 +1,4 @@
-import { noteSaved } from 'State/actions/current-note';
+import { noteSaved } from 'Features/current-note';
 import { noteDeleted, noteSelected } from 'State/actions/notes';
 import { initAction } from 'Utils/tests';
 import importedReducer from './notes';

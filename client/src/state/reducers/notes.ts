@@ -1,6 +1,6 @@
 import { createReducer } from 'deox';
 
-import { noteSaved } from 'State/actions/current-note';
+import { noteSaved } from 'Features/current-note';
 import { noteDeleted, noteSelected } from 'State/actions/notes';
 
 export default createReducer([] as string[],handle => [
