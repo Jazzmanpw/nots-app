@@ -1,14 +1,14 @@
 import { currentNoteIndexSelector, currentNoteValueSelector, noteSaved } from 'Features/current-note';
 import { uploadNotes } from 'State/actions/apiCall';
-import { notesCountSelector } from 'State/selectors/notes';
+import { notesCountSelector } from 'Features/notes';
 import { mockDispatch, mockState } from 'Utils/tests';
 import reactor from './noteSaved';
 
 import type { ReduxState } from 'State/store';
 
 jest
-  .mock('State/selectors/current-note')
-  .mock('State/selectors/notes')
+  .mock('Features/current-note')
+  .mock('Features/notes')
 ;
 
 // somehow ts decides that this selector returns never instead of number

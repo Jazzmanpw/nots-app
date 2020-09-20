@@ -1,4 +1,4 @@
-import { notesSelector } from 'State/selectors/notes';
+import { notesSelector } from 'Features/notes';
 import api from 'Utils/api';
 import { downloadNotes, uploadNotes } from 'State/actions/apiCall';
 

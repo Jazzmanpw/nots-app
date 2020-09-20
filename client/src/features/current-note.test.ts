@@ -5,7 +5,7 @@ import reducer, {
   currentNoteValueSelector,
   noteSelectedSelector,
 } from 'Features/current-note';
-import { noteDeleted, noteSelected } from 'State/actions/notes';
+import { noteDeleted, noteSelected } from 'Features/notes';
 import type { ReduxState } from 'State/store';
 import { initAction, testAction } from 'Utils/tests';
 

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
 import currentNoteReducer from 'Features/current-note';
-import notes from 'State/reducers/notes';
+import notesReducer from 'Features/notes';
 
 export default combineReducers({
   currentNote: currentNoteReducer,
-  notes,
+  notes: notesReducer,
 })

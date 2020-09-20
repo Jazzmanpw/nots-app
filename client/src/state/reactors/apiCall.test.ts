@@ -1,4 +1,4 @@
-import { notesSelector as originalNotesSelector } from 'State/selectors/notes';
+import { notesSelector as originalNotesSelector } from 'Features/notes';
 import api from 'Utils/api';
 import { downloadNotes, uploadNotes } from 'State/actions/apiCall';
 import apiCall from 'State/reactors/apiCall';
@@ -6,7 +6,7 @@ import { mockDispatch, mockState } from 'Utils/tests';
 
 jest
   .mock('Utils/api')
-  .mock('State/selectors/notes')
+  .mock('Features/notes')
 ;
 const state = mockState();
 const dispatch = mockDispatch();

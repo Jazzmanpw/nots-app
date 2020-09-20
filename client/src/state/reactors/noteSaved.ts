@@ -1,6 +1,6 @@
 import { currentNoteIndexSelector, currentNoteValueSelector, noteSaved } from 'Features/current-note';
 import { uploadNotes } from 'State/actions/apiCall';
-import { notesCountSelector } from 'State/selectors/notes';
+import { notesCountSelector } from 'Features/notes';
 
 import type { ReactorArg } from 'State/middlewares/reactor';
 

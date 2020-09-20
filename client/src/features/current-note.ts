@@ -2,7 +2,7 @@ import { createAction } from 'deox';
 import { combineReducers } from 'redux';
 import { createReducer } from 'deox';
 
-import { noteDeleted, noteSelected } from 'State/actions/notes';
+import { noteDeleted, noteSelected } from 'Features/notes';
 
 import type { ReduxState } from 'State/store';
 
