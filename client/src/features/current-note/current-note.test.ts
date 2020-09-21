@@ -13,9 +13,7 @@ describe('actions', () => {
   const value = 'some value';
   const index = 5;
 
-  testAction(noteSaved.started());
-
-  testAction(noteSaved.done(value, index), { value, index });
+  testAction(noteSaved(value, index), { value, index });
 
   testAction(noteChanged(value), value);
 });

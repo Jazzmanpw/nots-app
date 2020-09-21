@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { noteChanged, noteSaved } from 'Features/current-note/actions';
-import { currentNoteValueSelector, noteSelectedSelector } from 'Features/current-note/state';
+import { currentNoteIndexSelector, currentNoteValueSelector, noteSelectedSelector } from 'Features/current-note/state';
 import { noNotesSavedSelector } from 'Features/notes/state';
 
 import type { ChangeEventHandler, FormEventHandler } from 'react';
@@ -13,11 +13,12 @@ export default function CurrentNoteForm() {
 
   const disabled = !useSelector(noteSelectedSelector);
   const value = useSelector(currentNoteValueSelector);
+  const index = useSelector(currentNoteIndexSelector);
   const noNotesSaved = useSelector(noNotesSavedSelector);
 
   const onSave: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
-    dispatch(noteSaved.started());
+    dispatch(noteSaved(value, index));
   };
 
   const onChange: ChangeEventHandler<HTMLTextAreaElement> = ({ target: { value } }) => {

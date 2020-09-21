@@ -19,11 +19,11 @@ describe('reducer', () => {
     expect(reducer(undefined, initAction())).toEqual([]);
   });
 
-  describe(noteSaved.done, () => {
+  describe(noteSaved, () => {
     test('replace the note with the new one', () => {
       const value = 'the new first note';
       const index = 0;
-      const result = reducer(initState, noteSaved.done(value, index));
+      const result = reducer(initState, noteSaved(value, index));
 
       expect(result).toEqual([value, initState[1]]);
     });
