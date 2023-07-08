@@ -1,19 +1,19 @@
 {
-  "name": "service-e2e",
+  "name": "fe-service-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/service-e2e/src",
+  "sourceRoot": "apps/fe-service-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nx/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/service-e2e/cypress.config.ts",
-        "devServerTarget": "service:serve:development",
+        "cypressConfig": "apps/fe-service-e2e/cypress.config.ts",
+        "devServerTarget": "fe-service:serve:development",
         "testingType": "e2e"
       },
       "configurations": {
         "production": {
-          "devServerTarget": "service:serve:production"
+          "devServerTarget": "fe-service:serve:production"
         }
       }
     },
@@ -21,10 +21,10 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/service-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/fe-service-e2e/**/*.{js,ts}"]
       }
     }
   },
   "tags": [],
-  "implicitDependencies": ["service"]
+  "implicitDependencies": ["fe-service"]
 }
